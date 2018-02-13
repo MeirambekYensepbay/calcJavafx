@@ -8,6 +8,7 @@ package calcjavafx;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -82,7 +83,7 @@ public class CalcJavafx extends Application {
         
         lab.setLayoutX(0);
         lab.setLayoutY(0);
-        lab.setPrefWidth(600);
+        lab.setPrefWidth(285+95);
         lab.setPrefHeight(95);
         
         lab.setDisable(true);
@@ -167,6 +168,7 @@ public class CalcJavafx extends Application {
         plus.setPrefWidth(95);
         plus.setPrefHeight(95);
         
+        lab.setAlignment(Pos.BASELINE_RIGHT);
         
         one.setOnAction((e) -> {
             lab.setText(lab.getText() +"1");
@@ -259,7 +261,7 @@ public class CalcJavafx extends Application {
         root.getChildren().addAll(lab,one,two,three,four,five,six,seven,eight,nine,zero,mult,divide,plus,minus,equal,clear);
         
         Scene scene = new Scene(root, 380, 475);
-        scene.getStylesheets().add("style.css");
+        scene.getStylesheets().add("styles/style.css");
         primaryStage.setTitle("Calculator!");
         primaryStage.setScene(scene);
         primaryStage.show();
